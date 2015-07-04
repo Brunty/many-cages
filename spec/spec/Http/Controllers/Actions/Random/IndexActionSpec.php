@@ -3,7 +3,7 @@
 namespace spec\App\Http\Controllers\Actions\Random;
 
 use App\Http\Controllers\Actions\Random\IndexAction;
-use App\Repositories\CageRepository;
+use App\Repositories\JsonCageRepository;
 use App\Services\CageService;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -11,7 +11,7 @@ use Prophecy\Argument;
 class IndexActionSpec extends ObjectBehavior
 {
 
-    function let(CageRepository $cageRepo)
+    function let(JsonCageRepository $cageRepo)
     {
         $this->beConstructedWith($cageRepo);
     }
