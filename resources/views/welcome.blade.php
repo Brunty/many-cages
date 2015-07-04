@@ -40,14 +40,14 @@
             <td>/quote</td>
             <td>n/a</td>
             <td>JSON</td>
-            <td>Returns a random quote from our One True Goe.</td>
+            <td>Returns a random quote from our One True God.</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/ipsum</td>
             <td>n/a</td>
             <td>JSON</td>
-            <td>Returns the a paragraph of text from the words of our Lordg.</td>
+            <td>Returns the a paragraph of text from the words of our Lord.</td>
         </tr>
         </tbody>
     </table>
