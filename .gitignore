@@ -2,6 +2,7 @@
 /node_modules
 Homestead.yaml
 storage/database.sqlite
+storage/
 .env
 .dashbrew
 .idea
