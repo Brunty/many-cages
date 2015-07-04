@@ -22,9 +22,9 @@
     <php>
         <env name="APP_ENV" value="testing"/>
 
-        <env name="DB_DATABASE" value="cagemedb"/>
-        <env name="DB_USERNAME" value="cagemeusr"/>
-        <env name="DB_PASSWORD" value="6M6YtRZFD2RW"/>
+        <env name="DB_DATABASE" value=""/>
+        <env name="DB_USERNAME" value=""/>
+        <env name="DB_PASSWORD" value=""/>
 
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
