@@ -15,7 +15,7 @@ class IndexAction extends BaseAction
 
     public function act(ResponseFactory $response)
     {
-        $cageCount = $this->cageRepo->getCageCount();
+        $cageCount = $this->cageRepo->getCageImageCount();
         $data = [
             'cage_count' => $cageCount
         ];

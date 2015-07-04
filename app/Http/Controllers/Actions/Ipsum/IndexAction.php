@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Actions\Random;
+<?php namespace App\Http\Controllers\Actions\Ipsum;
 
 use App\Http\Controllers\Actions\BaseAction;
 use App\Repositories\CageRepositoryInterface;
@@ -24,9 +24,9 @@ class IndexAction extends BaseAction
      */
     public function act(ResponseFactory $response)
     {
-        $randomCage = $this->cageRepo->getRandomCageImage();
+        $cageIpsum = $this->cageRepo->getCageIpsum();
         $data = [
-            'cage' => $randomCage
+            'cage_ipsum' => $cageIpsum
         ];
 
         return $response->json($data);

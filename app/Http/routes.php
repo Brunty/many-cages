@@ -27,3 +27,6 @@ Route::get(
 Route::get('/random', 'Actions\Random\IndexAction@act');
 Route::get('/bomb/{number?}', 'Actions\Bomb\IndexAction@act')->where(['name' => '[0-9]+']);
 Route::get('/count', 'Actions\Count\IndexAction@act');
+
+Route::get('/ipsum', 'Actions\Ipsum\IndexAction@act');
+Route::get('/quote', 'Actions\Quote\IndexAction@act');

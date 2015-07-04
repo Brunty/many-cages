@@ -23,6 +23,10 @@ class JsonCageRepository implements CageRepositoryInterface
      */
     protected $cageFile = '/app/cages.json';
 
+    protected $cageIpsum;
+
+    protected $cageQuotes;
+
     /**
      * @param null $file
      *
@@ -49,9 +53,9 @@ class JsonCageRepository implements CageRepositoryInterface
     /**
      * @return mixed
      */
-    public function getRandomCage()
+    public function getRandomCageImage()
     {
-        $image = $this->getAllCages()[rand(0, $this->getMaxArrayIndex())];
+        $image = $this->getAllCageImages()[rand(0, $this->getMaxImageIndex())];
 
         return $image;
     }
@@ -61,7 +65,7 @@ class JsonCageRepository implements CageRepositoryInterface
      *
      * @return array
      */
-    public function getRandomCages($count = 5)
+    public function getRandomCageImages($count = 5)
     {
         /* move this to service class as it's basically validation? Don't like it in repo, oh well... */
         if ($count > self::MAX_BOMB_CAGES) {
@@ -75,7 +79,7 @@ class JsonCageRepository implements CageRepositoryInterface
         }
 
         // ALL THE CAGES!
-        $cages = $this->getAllCages();
+        $cages = $this->getAllCageImages();
 
         // Randomise those Cages!
         shuffle($cages);
@@ -86,7 +90,7 @@ class JsonCageRepository implements CageRepositoryInterface
     /**
      * @return array
      */
-    public function getAllCages()
+    public function getAllCageImages()
     {
         $fileContents = json_decode(file_get_contents($this->getCageFilePath()), true);
 
@@ -95,21 +99,67 @@ class JsonCageRepository implements CageRepositoryInterface
         return $this->cages;
     }
 
+    public function getAllCageQuotes()
+    {
+
+        $fileContents = json_decode(file_get_contents($this->getCageFilePath()), true);
+
+        $this->cageQuotes = $fileContents['cage_quotes'];
+
+        return $this->cageQuotes;
+    }
+
     /**
      * Get the total number of Cages we have
      * @return int
      */
-    public function getCageCount()
+    public function getCageImageCount()
     {
-        return count($this->getAllCages());
+        return count($this->getAllCageImages());
     }
 
     /**
      * Get the last index number of the arra of Cages that we have.
      * @return int
      */
-    private function getMaxArrayIndex()
+    private function getMaxImageIndex()
     {
-        return count($this->getAllCages()) - 1;
+        return count($this->getAllCageImages()) - 1;
+    }
+
+    public function getRandomCageQuote()
+    {
+        return $this->getAllCageQuotes()[rand(0, $this->getMaxQuoteIndex())];
+    }
+
+    public function getCageIpsum($sentences = 10)
+    {
+        $quotes = $this->getAllCageQuotes();
+        $wordString = implode(' ', $quotes);
+        $wordString = str_replace('.', '', $wordString);
+        $wordArray = explode(' ', $wordString);
+        $ipsum = [];
+
+        while (count($ipsum) < $sentences) {
+            $wordsInSentence = rand(6, 11);
+            $wordsForSentence = [];
+
+            while (count($wordsForSentence) < $wordsInSentence) {
+                shuffle($wordArray);
+                $wordsForSentence[] = $wordArray[0];
+            }
+
+            $string = implode(' ', $wordsForSentence);
+            $string = ucfirst($string);
+            $string = trim($string, ','); // trim off any trailing commas, so we don't end up messy.
+            $ipsum[] = $string;
+        }
+
+        return implode('. ', $ipsum) . '.';
+    }
+
+    private function getMaxQuoteIndex()
+    {
+        return count($this->getAllCageQuotes()) - 1;
     }
 }

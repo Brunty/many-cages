@@ -13,22 +13,24 @@ interface CageRepositoryInterface
     /**
      * @return mixed
      */
-    function getRandomCage();
+    function getRandomCageImage();
 
     /**
      * @param int $count
      *
      * @return mixed
      */
-    function getRandomCages($count = 5);
+    function getRandomCageImages($count = 5);
 
     /**
      * @return mixed
      */
-    function getAllCages();
+    function getAllCageImages();
 
     /**
      * @return mixed
      */
-    function getCageCount();
+    function getCageImageCount();
+
+    public function getCageIpsum();
 }

@@ -19,7 +19,7 @@ class IndexAction extends BaseAction
     {
         $status = 200;
         try {
-            $cages = $this->cageRepo->getRandomCages($number);
+            $cages = $this->cageRepo->getRandomCageImages($number);
             $data = [
                 'cages' => $cages
             ];

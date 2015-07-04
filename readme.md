@@ -2,7 +2,7 @@
 
 Nottingslack Crapathon.
 
-
+I should really move the actions from dedicated folders: `Count/IndexAction.php` to `CountAction.php` for example, but I wasn't sure if each thing was going to have multiple actions or not. Oh well.
 
 TODO:
 
