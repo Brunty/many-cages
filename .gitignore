@@ -1,6 +1,7 @@
 /vendor
 /node_modules
 Homestead.yaml
+storage/database.sqlite
 .env
 .dashbrew
 .idea
