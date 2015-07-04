@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use App\Repositories\CageRepositoryInterface;
+use App\Repositories\JsonCageRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap any application services.
      *
@@ -24,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind(
+            CageRepositoryInterface::class,
+            JsonCageRepository::class
+        );
     }
 }
