@@ -151,7 +151,7 @@ class JsonCageRepository implements CageRepositoryInterface
 
             $string = implode(' ', $wordsForSentence);
             $string = ucfirst($string);
-            $string = trim($string, ','); // trim off any trailing commas, so we don't end up messy.
+            $string = trim($string, ',\'\"'); // trim off any trailing punctuation, so we don't end up messy.
             $ipsum[] = $string;
         }
 
