@@ -35,6 +35,20 @@
             <td>JSON</td>
             <td>Returns the total number of pictures of our One True God that are available to us.</td>
         </tr>
+        <tr>
+            <td>GET</td>
+            <td>/quote</td>
+            <td>n/a</td>
+            <td>JSON</td>
+            <td>Returns a random quote from our One True Goe.</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/ipsum</td>
+            <td>n/a</td>
+            <td>JSON</td>
+            <td>Returns the a paragraph of text from the words of our Lordg.</td>
+        </tr>
         </tbody>
     </table>
 @endsection
