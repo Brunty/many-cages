@@ -6,5 +6,5 @@ Feature: Cage count
   Scenario: Get the count of Cage pictures
     Given I am on "/count"
     Then the response code should be 200
-    And the response should contain the key "cage_count"
-    And the response should contain the count of items in the "cage_count" key
+    And the JSON response should contain the key "cage_count"
+    And the JSON response should contain the count of items in the "cage_count" key

@@ -6,4 +6,4 @@ Feature: Cage ipsum
   Scenario: Get a paragraph of the words of our Lord
     Given I am on "/ipsum"
     Then the response code should be 200
-    And the response should contain the key "cage_ipsum"
+    And the JSON response should contain the key "cage_ipsum"

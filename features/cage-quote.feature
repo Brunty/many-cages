@@ -6,4 +6,4 @@ Feature: Cage quote
   Scenario: Get a random quote of the words of our Lord
     Given I am on "/quote"
     Then the response code should be 200
-    And the response should contain the key "cage_quote"
+    And the JSON response should contain the key "cage_quote"

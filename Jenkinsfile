@@ -3,7 +3,7 @@ node {
     git "git@github.com:Brunty/many-cages.git"
     sh "echo copied from SCM"
     stage "Composer install"
-    sh "composer install"
+    sh "composer install --prefer-dist --no"
     stage "Unit Tests"
     sh "cp stubs/cages.json storage/app/"
 }
