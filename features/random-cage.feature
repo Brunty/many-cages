@@ -6,5 +6,5 @@ Feature: Random Cage
   Scenario: Get a Random Cage Picture
     Given I am on "/random"
     Then the response code should be 200
-    And the JSON response should contain the key "cage"
-    And the JSON response should contain "1" items in "cage"
+    And the response should contain the key "cage"
+    And the response should contain "1" items in "cage"
