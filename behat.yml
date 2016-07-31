@@ -9,4 +9,3 @@ default:
         Behat\MinkExtension:
             default_session: laravel
             laravel: ~
-        Brunty\BehatApiResponses:

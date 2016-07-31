@@ -1,13 +1,12 @@
-stage "SCM"
-
 node {
-   git "git@github.com:Brunty/many-cages.git"
-   sh "echo copied from SCM"
+    stage "SCM"
+    git "git@github.com:Brunty/many-cages.git"
+    sh "echo copied from SCM"
+    stage "Composer install"
+    sh "composer install"
+    stage "Unit Tests"
+    sh "cp stubs/cages.json storage/app/"
 }
-
-stage "Unit Tests"
-
-sh "cp stubs/cages.json storage/app/"
 
 parallel (
   phpunit: { node {
@@ -22,3 +21,4 @@ parallel (
   behat: { node {
     sh "vendor/bin/behat"
   }}
+)
